@@ -1,9 +1,11 @@
 // Header with links and search bar
 .header{
+    min-width:100%;
     height:70px;
     display:flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     box-shadow: $dropdown-shadow;
 
     &__item{
@@ -31,7 +33,8 @@
 }
 
 .search{
-    flex:  1 0 30%;
+    max-width: 40%;
+    flex:  1 0 200px;
     background: inherit;
 
     &__input{
@@ -55,8 +58,8 @@
       border:none;  
     }
     
-    &__button:focus{
-       transform: translateY(-3px);
+    &__button:focus,:hover{
+       color:$info-color;
        outline:none;
     }
 }
@@ -77,12 +80,11 @@
     }
 
     &__item:hover{
-       background: $light-gray;
-       color:$black-color;
+       color:$info-color;
     }
 
     &__icon{
-        font-size:25px;
+       font-size:25px;
     }
 
     &__icon--value{
@@ -102,6 +104,6 @@
     }
 
     &__msg{
-        margin-left:10px;
+       margin-left:10px;
     }
 }

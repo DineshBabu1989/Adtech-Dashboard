@@ -153,10 +153,12 @@ h1 .subtitle {
   color: #FF4A55 !important; }
 
 .header {
+  min-width: 100%;
   height: 70px;
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.125); }
   .header__item {
     margin: 0px 10px; }
@@ -174,7 +176,8 @@ h1 .subtitle {
       color: #888888; }
 
 .search {
-  flex: 1 0 30%;
+  max-width: 40%;
+  flex: 1 0 200px;
   background: inherit; }
   .search__input {
     width: 100%;
@@ -192,8 +195,8 @@ h1 .subtitle {
     color: #888888;
     outline: none;
     border: none; }
-  .search__button:focus {
-    transform: translateY(-3px);
+  .search__button:focus, .search :hover {
+    color: #1DC7EA;
     outline: none; }
 
 .navlinks {
@@ -209,8 +212,7 @@ h1 .subtitle {
     padding: 0px 20px;
     position: relative; }
   .navlinks__item:hover {
-    background: #E3E3E3;
-    color: #333333; }
+    color: #1DC7EA; }
   .navlinks__icon {
     font-size: 25px; }
   .navlinks__icon--value {
@@ -229,3 +231,53 @@ h1 .subtitle {
     right: 10px; }
   .navlinks__msg {
     margin-left: 10px; }
+
+.sidebar {
+  width: 100%;
+  height: 100vh;
+  background: #888888; }
+  .sidebar__logo {
+    width: 40px;
+    height: 40px; }
+  .sidebar__heading {
+    height: 70px;
+    border-bottom: 1px solid #DDDDDD;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .sidebar__heading--title {
+      color: #FFFFFF;
+      font-size: 20px;
+      font-weight: 500;
+      margin-left: 5px; }
+  .sidebar ul {
+    padding: 0;
+    width: 90%;
+    margin-top: 20px;
+    list-style-type: none; }
+  .sidebar__navlinks--wrapper {
+    display: flex;
+    justify-content: center;
+    background: inherit; }
+  .sidebar__navlinks--item {
+    display: flex;
+    align-items: baseline;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 5px;
+    background: #9A9A9A; }
+  .sidebar__navlinks--item:hover {
+    background: #777777; }
+  .sidebar__navlinks--icon {
+    color: #FFFFFF;
+    font-size: 20px; }
+  .sidebar__navlinks--msg {
+    color: #FFFFFF;
+    font-size: 15px;
+    margin-left: 15px; }
+
+@media (max-width: 620px) {
+  .header {
+    justify-content: space-between; }
+  .search {
+    display: none; } }

@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
-
 class HeaderNav extends Component{
 
     render() {
         return (
           <React.Fragment>
             <header className="header">
+            
                <div className="header__item header__dashboard">
                   <i className="header__dashboard-icon fa fa-dashboard"/> 
                   <p className="header__dashboard-title">Dashboard </p>
@@ -32,7 +32,6 @@ class HeaderNav extends Component{
                    <p className="navlinks__msg">Logout </p>
                  </div>
               </nav>
-               
 
             </header>
           </React.Fragment>
