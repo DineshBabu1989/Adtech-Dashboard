@@ -2,9 +2,11 @@
     .header{
         justify-content: space-between;
     }
+
     .search{
         display: none;
     }
+    
     .dashboard{    
         &__sidebar{
             display: none;
@@ -14,10 +16,19 @@
             height:100vh;
         }
     }
+    //display logout button on mobile
+    .navlinks__item:nth-of-type(3) {
+        display: none;
+    }
 }
 
 
-@media (max-width: 991px){
-    
-
+@media (min-width: 780px){
+    .navlinks__mobile-button{
+        display: none;
+    }
+  
+    .navlinks:nth-child(2) {
+        background: pink;
+    }
 }

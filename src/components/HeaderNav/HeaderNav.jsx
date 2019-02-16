@@ -31,6 +31,15 @@ class HeaderNav extends Component{
                    <i className="navlinks__icon fa fa-user-circle-o"/>
                    <p className="navlinks__msg">Logout </p>
                  </div>
+                 <div className= "navlinks__item">
+                   <button className="navlinks__mobile-button">
+                      <div className = "navlinks__mobile-button--wrapper">
+                         <span className="navlinks__mobile-button--line"></span>
+                         <span className="navlinks__mobile-button--line"></span>
+                         <span className="navlinks__mobile-button--line"></span>
+                      </div>
+                   </button>
+                 </div>
               </nav>
 
             </header>
