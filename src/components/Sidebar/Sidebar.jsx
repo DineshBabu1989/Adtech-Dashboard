@@ -30,6 +30,12 @@ class Sidebar extends Component{
                             <p className="sidebar__navlinks--msg">Statistics</p>
                          </li>
                       </ul>
+                      <ul className = "sidebar__navLinks--signout">
+                         <div className = "sidebar__navlinks--item">
+                            <i className="sidebar__navlinks--icon fa fa-sign-out"/>
+                            <p className="sidebar__navlinks--msg">Logout</p>
+                        </div>
+                      </ul>
                   </nav>
               </nav>
            </React.Fragment>

@@ -1,9 +1,18 @@
-@media (max-width: 620px){
+@media (max-width: 780px){
     .header{
         justify-content: space-between;
     }
     .search{
         display: none;
+    }
+    .dashboard{    
+        &__sidebar{
+            display: none;
+        }
+        &__header{
+            width:100%;
+            height:100vh;
+        }
     }
 }
 

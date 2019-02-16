@@ -1,12 +1,13 @@
-// Header with links and search bar
+// header with links and search bar
 .header{
-    min-width:100%;
+    width:100%;
     height:70px;
     display:flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     box-shadow: $dropdown-shadow;
+    background: $white-color;
 
     &__item{
        margin:0px 10px;
@@ -52,7 +53,7 @@
       color:$black-color;
     }
     &__button{
-      background:inherit;
+      background:none;
       color:$default-color;
       outline:none;
       border:none;  

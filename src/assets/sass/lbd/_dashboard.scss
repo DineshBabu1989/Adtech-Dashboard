@@ -1,0 +1,15 @@
+.dashboard{
+    display: flex;
+    width:100vw;
+    height:100vh;
+    background:$smoke-bg;
+
+    &__sidebar{
+        width:20%;
+    }
+
+    &__header{
+        width:80%;
+        height:100vh;
+    }
+}
