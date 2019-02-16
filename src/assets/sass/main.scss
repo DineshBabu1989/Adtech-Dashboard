@@ -1,8 +1,11 @@
+
+@import "lbd/variables";
+@import "lbd/mixins";
+
 //reset defaults
-@import "abstracts/vendor-prefixes";
-@import "abstracts/variables";
-@import "base/base";
-@import "base/typography"
+@import "lbd/base";
+@import "lbd/typography";
+@import "lbd/headerNav"
 
 
 

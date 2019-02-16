@@ -1,0 +1,107 @@
+// Header with links and search bar
+.header{
+    height:70px;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: $dropdown-shadow;
+
+    &__item{
+       margin:0px 10px;
+    }
+
+    &__dashboard{
+        display:flex;
+        flex-direction: row;
+        align-items:baseline;
+        color:$default-color;
+
+        &-title{
+            font-size:$fontsize-header-title;
+            margin-left:10px;
+        }
+
+        &-icon{
+            font-size:$fontsize-header-icon;
+            margin:0px 10px;
+            color:$default-color;
+        }
+    }
+       
+}
+
+.search{
+    flex:  1 0 30%;
+    background: inherit;
+
+    &__input{
+      width:100%;
+      outline:none;
+      border:none;
+      background-color: inherit;
+      border-bottom: 1px solid $medium-dark-gray;
+      color:$medium-dark-gray;
+      margin-right:-35px;
+      font-size:15px
+    }
+    
+    &__input:focus{
+      color:$black-color;
+    }
+    &__button{
+      background:inherit;
+      color:$default-color;
+      outline:none;
+      border:none;  
+    }
+    
+    &__button:focus{
+       transform: translateY(-3px);
+       outline:none;
+    }
+}
+
+.navlinks{
+    display: flex;
+    color:$default-color;
+    align-self: stretch;
+    
+    &__item{
+        display: flex;
+        background: inherit;
+        align-self: stretch;
+        justify-content: center;
+        align-items: center;
+        padding:0px 20px;
+        position: relative;
+    }
+
+    &__item:hover{
+       background: $light-gray;
+       color:$black-color;
+    }
+
+    &__icon{
+        font-size:25px;
+    }
+
+    &__icon--value{
+       width:20px;
+       height:20px;
+       border-radius:100%;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       font-size: 10px;
+       background:$danger-bg;
+       color:$white-color;
+       border-radius: 50px;
+       position: absolute;
+       top:10px;
+       right:10px;
+    }
+
+    &__msg{
+        margin-left:10px;
+    }
+}
