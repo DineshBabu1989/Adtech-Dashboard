@@ -7,7 +7,7 @@ import reducer from './reducers';
 
 import Dashboard from "../src/views/Dashboard/Dashboard";
 
-import "bootstrap/dist/css/bootstrap.min.css";
+//import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/sass/main.css";
 
 const store = createStore(reducer)

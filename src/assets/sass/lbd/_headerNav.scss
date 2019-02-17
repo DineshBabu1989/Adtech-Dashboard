@@ -6,7 +6,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    box-shadow: $dropdown-shadow;
+    border-bottom:1px solid $medium-gray;
+    //box-shadow: $dropdown-shadow;
     background: $white-color;
 
     &__item{
@@ -45,16 +46,18 @@
       background-color: inherit;
       border-bottom: 1px solid $medium-dark-gray;
       color:$medium-dark-gray;
-      margin-right:-35px;
+      margin-right:-20px;
       font-size:15px
     }
     
-    &__input:focus{
+    &__input:focus,:hover{
       color:$black-color;
     }
+
     &__button{
       background:none;
       color:$default-color;
+      font-size: 20px;
       outline:none;
       border:none;  
     }
@@ -95,7 +98,7 @@
        display: flex;
        align-items: center;
        justify-content: center;
-       font-size: 10px;
+       font-size: 12px;
        background:$danger-bg;
        color:$white-color;
        border-radius: 50px;
@@ -107,4 +110,27 @@
     &__msg{
        margin-left:10px;
     }
+}
+
+@media (max-width: 780px){
+    .header{
+        justify-content: space-between;
+    }
+
+    .search{
+        display: none;
+    }
+
+    //display logout button on mobile
+    .navlinks__item:nth-of-type(3) {
+        display: none;
+    }
+}
+
+
+@media (min-width: 780px){
+
+    .navlinks__mobile-button{
+        display: none;
+    }   
 }

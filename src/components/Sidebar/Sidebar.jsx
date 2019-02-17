@@ -10,8 +10,8 @@ class Sidebar extends Component{
               <nav className = "sidebar">
                   <header className = "sidebar__heading">
                       <div className= "sidebar__heading--wrapper">
-                         <img src={logo} className = "sidebar__logo" alt = "kayzen logo"/>
-                         <span className = "sidebar__heading--title">KAYZEN</span>
+                         <img src={logo} className = "sidebar__heading--logo" alt = "kayzen logo"/>
+                         <p className = "sidebar__heading--title">KAYZEN</p>
                       </div>
                   </header>
 

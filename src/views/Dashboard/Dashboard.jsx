@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import HeaderNav from "../../containers/HeaderNav/HeaderNav";
+import StatsCard from "../../components/StatsCard/StatsCard";
 
 class Dashboard extends Component{
 
@@ -15,10 +16,12 @@ class Dashboard extends Component{
                  </nav>
                  <nav className = {`dashboard__header-${this.props.showSideBar}`}>
                     <HeaderNav/>
+                    <StatsCard/>
                  </nav>
                  <nav className = {`dashboard__sidebar--mobile-${this.props.showSideBar}`}>
                     <Sidebar/>
                  </nav>
+
                </div>
             </React.Fragment>
         )

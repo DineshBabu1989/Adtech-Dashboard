@@ -4,17 +4,22 @@
     height:100vh;
     background: $default-bg;
 
-    &__logo{
-        width:40px;
-        height:40px;
-    }
-
     &__heading{
         height:70px;
         border-bottom: 1px solid $medium-gray;
         display: flex;
-        align-items: center;
         justify-content: center;
+
+        &--wrapper{
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        &--logo{
+            width:40px;
+            height:40px;
+        }
 
         &--title{
             color:$white-color;
