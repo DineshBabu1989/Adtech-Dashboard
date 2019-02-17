@@ -6,14 +6,28 @@
     .search{
         display: none;
     }
-    
+
     .dashboard{    
         &__sidebar{
             display: none;
         }
-        &__header{
+        &__header-false{
             width:100%;
             height:100vh;
+            //margin-left: -60%;
+        }
+        &__header-true{
+            width:100%;
+            height:100vh;
+            margin-left: -60%;
+        }
+        &__sidebar--mobile-false{
+            width:60%;
+            display: none;
+        }
+        &__sidebar--mobile-true{
+            width:60%;
+            display: block;
         }
     }
     //display logout button on mobile
@@ -24,11 +38,12 @@
 
 
 @media (min-width: 780px){
+
+    .dashboard__sidebar--mobile-false{
+       display: none;
+    }
+
     .navlinks__mobile-button{
         display: none;
-    }
-  
-    .navlinks:nth-child(2) {
-        background: pink;
-    }
+    }   
 }

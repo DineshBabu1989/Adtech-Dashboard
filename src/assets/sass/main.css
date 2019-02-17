@@ -319,7 +319,7 @@ h1 .subtitle {
   background: #F5F5F5; }
   .dashboard__sidebar {
     width: 20%; }
-  .dashboard__header {
+  .dashboard__header-false {
     width: 80%;
     height: 100vh; }
 
@@ -330,14 +330,24 @@ h1 .subtitle {
     display: none; }
   .dashboard__sidebar {
     display: none; }
-  .dashboard__header {
+  .dashboard__header-false {
     width: 100%;
     height: 100vh; }
+  .dashboard__header-true {
+    width: 100%;
+    height: 100vh;
+    margin-left: -60%; }
+  .dashboard__sidebar--mobile-false {
+    width: 60%;
+    display: none; }
+  .dashboard__sidebar--mobile-true {
+    width: 60%;
+    display: block; }
   .navlinks__item:nth-of-type(3) {
     display: none; } }
 
 @media (min-width: 780px) {
-  .navlinks__mobile-button {
+  .dashboard__sidebar--mobile-false {
     display: none; }
-  .navlinks:nth-child(2) {
-    background: pink; } }
+  .navlinks__mobile-button {
+    display: none; } }

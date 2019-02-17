@@ -2,6 +2,16 @@ import React, { Component } from "react";
 
 class HeaderNav extends Component{
 
+    constructor(props){
+      super(props);
+
+      this.handleMobileSideBarToggle = this.handleMobileSideBarToggle.bind(this);
+    }
+
+    handleMobileSideBarToggle(){
+      this.props.showMobileSideBar();
+    }
+
     render() {
         return (
           <React.Fragment>
@@ -32,7 +42,7 @@ class HeaderNav extends Component{
                    <p className="navlinks__msg">Logout </p>
                  </div>
                  <div className= "navlinks__item">
-                   <button className="navlinks__mobile-button">
+                   <button className="navlinks__mobile-button" onClick = {this.handleMobileSideBarToggle}>
                       <div className = "navlinks__mobile-button--wrapper">
                          <span className="navlinks__mobile-button--line"></span>
                          <span className="navlinks__mobile-button--line"></span>
