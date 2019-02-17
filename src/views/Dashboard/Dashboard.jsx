@@ -1,23 +1,9 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import Sidebar from "../../components/Sidebar/Sidebar";
-import HeaderNav from "../../components/HeaderNav/HeaderNav";
+import HeaderNav from "../../containers/HeaderNav/HeaderNav";
 
 class Dashboard extends Component{
-
-    constructor(props){
-        super(props);
-        this.state = {
-            sidebarToggle:false
-        }
-
-        this.handleHeaderSideBarToggle = this.handleHeaderSideBarToggle.bind(this);
-    }
-
-    handleHeaderSideBarToggle(){
-       this.setState({
-           sidebarToggle:!this.state.sidebarToggle
-       });
-    }
 
     render(){
 
@@ -27,10 +13,10 @@ class Dashboard extends Component{
                  <nav className = "dashboard__sidebar">
                     <Sidebar/>
                  </nav>
-                 <nav className = {`dashboard__header-${this.state.sidebarToggle}`}>
-                    <HeaderNav showMobileSideBar = {this.handleHeaderSideBarToggle}/>
+                 <nav className = {`dashboard__header-${this.props.showSideBar}`}>
+                    <HeaderNav/>
                  </nav>
-                 <nav className = {`dashboard__sidebar--mobile-${this.state.sidebarToggle}`}>
+                 <nav className = {`dashboard__sidebar--mobile-${this.props.showSideBar}`}>
                     <Sidebar/>
                  </nav>
                </div>
@@ -39,4 +25,9 @@ class Dashboard extends Component{
     }
 
 }
-export default Dashboard;
+
+const mapStateToProps = state => ({
+    showSideBar: state.toggleSideBar
+});
+  
+export default connect(mapStateToProps,null)(Dashboard);

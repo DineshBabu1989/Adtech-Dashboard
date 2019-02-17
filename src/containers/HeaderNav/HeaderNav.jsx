@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { toggle_side_bar } from "../../actions/actions";
 
 class HeaderNav extends Component{
 
@@ -9,7 +11,8 @@ class HeaderNav extends Component{
     }
 
     handleMobileSideBarToggle(){
-      this.props.showMobileSideBar();
+      const toggleButtonState = this.props.showSideBar;
+      this.props.toggle_side_bar(toggleButtonState);
     }
 
     render() {
@@ -58,4 +61,8 @@ class HeaderNav extends Component{
       }
 }
 
-export default HeaderNav;
+const mapStateToProps = state => ({
+  showSideBar: state.toggleSideBar
+});
+
+export default connect(mapStateToProps,{toggle_side_bar})(HeaderNav);
