@@ -70,6 +70,9 @@
       font-size: 15px;
       margin-left: 5px; }
 
+.table {
+  background-color: red; }
+
 *,
 *::after,
 *::before {
@@ -353,6 +356,7 @@ h1 .subtitle {
 
 .dashboardcontent {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   background-color: inherit;
   padding: 10px; }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Sidebar from "../../components/Sidebar/Sidebar";
+import SideBar from "../../components/SideBar/SideBar";
 import HeaderNav from "../../containers/HeaderNav/HeaderNav";
 import DashboardContent from "../../layouts/DashboardContent/DashboardContent";
 
@@ -12,7 +12,7 @@ class Dashboard extends Component{
              <React.Fragment>
                <div className = "dashboard">
                  <nav className = "dashboard__sidebar">
-                    <Sidebar/>
+                    <SideBar/>
                  </nav>
                  <nav className = {`dashboard__header-${this.props.showSideBar}`}>
                     <HeaderNav/>
@@ -20,7 +20,7 @@ class Dashboard extends Component{
                  </nav>
                  
                  <nav className = {`dashboard__sidebar--mobile-${this.props.showSideBar}`}>
-                    <Sidebar/>
+                    <SideBar/>
                  </nav>
 
                </div>

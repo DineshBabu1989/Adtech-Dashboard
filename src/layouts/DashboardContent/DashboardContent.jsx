@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import StatsCard from "../../components/StatsCard/StatsCard";
+import TablePagination from "../../components/TablePagination/TablePagination";
 
 const StatsProps =[
     {
@@ -62,6 +63,7 @@ class DashboardContent extends Component{
                   <section className="dashboardcontent__statscards">
                      {statsCards}
                   </section>
+                    <TablePagination/>
                </section>
             </React.Fragment>
         )
