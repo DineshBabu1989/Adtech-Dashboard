@@ -1,3 +1,29 @@
 .table{
-    background-color:red;
+    background-color: $white-color;
+    border:1px solid $medium-gray;
+    border-radius:5px;
+    padding:10px;
+    width:100%;
+
+    &__heading{
+        background-color:inherit;
+        border-bottom:1px solid $medium-gray;
+        margin: 0px;
+        padding-bottom: 10px;
+    }
+
+    table{
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 16px;
+    }
+    
+    th, td {
+        text-align: center;
+        padding: 10px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
 }

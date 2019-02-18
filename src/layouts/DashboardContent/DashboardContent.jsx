@@ -63,7 +63,9 @@ class DashboardContent extends Component{
                   <section className="dashboardcontent__statscards">
                      {statsCards}
                   </section>
-                    <TablePagination/>
+                  <section className="dashboardcontent__table">
+                     <TablePagination/>
+                  </section>
                </section>
             </React.Fragment>
         )

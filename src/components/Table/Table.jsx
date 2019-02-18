@@ -1,26 +1,37 @@
-import React, { Component } from "react";
+/**
+ * Table component - displays a table which can render a variable number of rows
+ * @tableColumnLabels - Inputs that specify column heading and acts as property names  for 
+ * building table elements including th,td
+ * @tableName - Name of the table passed as a prop
+ * @tableContentArray - Array that holds the data as objects
+ */
 
+
+import React, { Component } from "react";
 
 class Table extends Component{
 
-
     tableContent = (tableContentArray) => {
+
        if(tableContentArray.length === 0)
        {
            return "loading..."
        }
        
        return tableContentArray.map((ele,unique_id) => {
-                return <tr key={unique_id}>
-                            <th>{ele.campaign_id}</th> 
-                            <th>{ele.advertiser_id}</th>
-                            <th>{ele.name}</th>
-                            <th>{ele.starting_date}</th>
-                            <th>{ele.ending_date}</th>
-                            <th>{ele.cost_model}</th>
-                            <th>{ele.cost}</th>
-                        </tr>
+
+            const tableRowData = this.props.tableRowElementProperties.map(property => 
+            <td>{ele[property]}</td>);
+
+            return <tr key={unique_id}> {tableRowData} </tr>
        });
+    }
+
+    renderTableHeaders = () =>{
+        
+        return this.props.tableColumnLabels.map((headerTag,index) => 
+        <th key = {index}>{headerTag}</th>
+        );
     }
 
     render(){
@@ -28,17 +39,11 @@ class Table extends Component{
         return(
            <React.Fragment>
               <section className = "table">
-                  <h4 className = "table__heading">Campagins breakdown</h4>
+                  <h4 className = "table__heading">{this.props.tableName}</h4>
                   <table>
                     <thead>
                       <tr>
-                         <th>campaign_id</th> 
-                         <th>advertiser_id</th>
-                         <th>name</th>
-                         <th>starting_date</th>
-                         <th>ending_date</th>
-                         <th>cost_model</th>
-                         <th>cost</th>
+                         {this.renderTableHeaders()}
                       </tr> 
                     </thead>  
                     <tbody>
