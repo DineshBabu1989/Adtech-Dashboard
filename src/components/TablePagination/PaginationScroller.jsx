@@ -37,13 +37,15 @@ class PaginationScroller extends Component{
                     {
                         if(this.props.currentPage === ele){
                           const currentSelection = true;
-                          return <li key = {ele} id ={ele} onClick = {this.props.handlePageButton} className={`pagination-scroller__page--${currentSelection}`}>
+                          return <li key = {ele} id ={ele} onClick = {this.props.handlePageButton} 
+                          className={`pagination-scroller__page pagination-scroller__page--${currentSelection}`}>
                                    {ele}
                                  </li>
                         }
                         else{
                             const currentSelection = false;
-                            return <li key = {ele} id ={ele} onClick = {this.props.handlePageButton} className={`pagination-scroller__page--${currentSelection}`}>
+                            return <li key = {ele} id ={ele} onClick = {this.props.handlePageButton} 
+                            className={`pagination-scroller__page pagination-scroller__page--${currentSelection}`}>
                                      {ele}
                                    </li> 
                         }
@@ -55,9 +57,9 @@ class PaginationScroller extends Component{
         return(
            <React.Fragment>
               <div className = "pagination-scroller">
-              <button className = "pagination-scroller__button" onClick = {this.props.handlePrevButton}>Prev</button>
+              <button className = "pagination-scroller__button button__default" onClick = {this.props.handlePrevButton}>Prev</button>
                {this.renderPageNumbers()}
-              <button className = "pagination-scroller__button" onClick = {this.props.handleNextButton}>Next</button>
+              <button className = "pagination-scroller__button button__default" onClick = {this.props.handleNextButton}>Next</button>
               </div>
            </React.Fragment>
         ); 

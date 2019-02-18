@@ -40,16 +40,18 @@ class Table extends Component{
            <React.Fragment>
               <section className = "table">
                   <h4 className = "table__heading">{this.props.tableName}</h4>
-                  <table>
-                    <thead>
-                      <tr>
-                         {this.renderTableHeaders()}
-                      </tr> 
-                    </thead>  
-                    <tbody>
-                      {this.tableContent(this.props.tableContentArray)}
-                    </tbody>
-                  </table>
+                   <div className= "table__wrapper">
+                    <table>
+                      <thead>
+                        <tr>
+                          {this.renderTableHeaders()}
+                        </tr> 
+                      </thead>  
+                     <tbody>
+                          {this.tableContent(this.props.tableContentArray)}
+                     </tbody>
+                   </table>
+                  </div>
               </section>
            </React.Fragment>
         ); 
