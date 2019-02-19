@@ -20,10 +20,10 @@ class Table extends Component{
        
        return tableContentArray.map((ele,unique_id) => {
 
-            const tableRowData = this.props.tableRowElementProperties.map(property => 
-            <td>{ele[property]}</td>);
+            const tableRowData = this.props.tableRowElementProperties.map((property,i) => 
+            <td key={i}>{ele[property]}</td>);
 
-            return <tr key={unique_id}> {tableRowData} </tr>
+            return <tr key={unique_id}>{tableRowData}</tr>
        });
     }
 

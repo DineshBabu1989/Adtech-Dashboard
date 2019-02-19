@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import StatsCard from "../../components/StatsCard/StatsCard";
-import TablePagination from "../../components/TablePagination/TablePagination";
+import TablePagination from "../../containers/TablePagination/TablePagination";
 
 const StatsProps =[
     {

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+
 import { toggle_side_bar } from "../../actions/actions";
 
 class HeaderNav extends Component{
