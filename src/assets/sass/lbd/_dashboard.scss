@@ -1,8 +1,7 @@
 .dashboard{
     display: flex;
-    width:100vw;
-    height:100vh;
-    background:$smoke-bg;
+    width:100%;
+    background-color: $smoke-bg;
 
     &__sidebar{
         width:20%;
@@ -10,7 +9,6 @@
 
     &__header-false{
         width:80%;
-        height:100vh;
     }
 }
 
@@ -22,7 +20,7 @@
         }
         &__header-false{
             width:100%;
-            height:100vh;
+            height:100%;
             margin-left: 0%;
             transition: margin 1s ease
         }

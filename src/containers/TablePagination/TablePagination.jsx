@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import Table from "../../components/Table/Table";
 import PaginationScroller from "../../components/PaginationScroller/PaginationScroller";
 
-import {load_table_pagination_bar,
+import {getCampaignData,
        handle_pagination_page_button_click,
        handle_pagination_prev_button_click,
        handle_pagination_next_button_click} from "../../actions/actions";
@@ -21,8 +21,8 @@ class TablePagination extends Component{
    }
 
     componentDidMount(){
-
-      this.props.load_table_pagination_bar();
+      
+      this.props.getCampaignData();
 
     }
    
@@ -39,14 +39,18 @@ class TablePagination extends Component{
     }
 
     handlePaginationNextButtonClick(){
+        const tableLength = this.props.tableAndPaginationData.tableContentArray.length;
+        const tableRows = this.props.tableAndPaginationData.rowsPerPage;
 
-        this.props.handle_pagination_next_button_click();
+        const numberOfPages = Math.ceil(tableLength/tableRows);
+
+        this.props.handle_pagination_next_button_click(numberOfPages);
     }
 
     render(){
-        console.log(this.props.tableAndPaginationData);
+        
         const { tableContentArray, currentPage, rowsPerPage, tableName, isLoaded } = this.props.tableAndPaginationData;
-
+        console.log(tableContentArray);
         const tableColumnLabels = [
             "Campaign Id",
             "Advertisor Id",
@@ -57,11 +61,11 @@ class TablePagination extends Component{
             "Cost"
         ]
         const tableRowElementProperties = [
-            "campaign_id", 
+            "id", 
             "advertiser_id",
             "name",
-            "starting_date",
-            "ending_date",
+            "start_date",
+            "end_date",
             "cost_model",
             "cost"
        ];
@@ -108,7 +112,7 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps,{
-  load_table_pagination_bar,
+  getCampaignData,
   handle_pagination_page_button_click,
   handle_pagination_prev_button_click,
   handle_pagination_next_button_click

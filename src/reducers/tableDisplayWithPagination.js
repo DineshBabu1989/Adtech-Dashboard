@@ -25,8 +25,8 @@ const  tableDisplayWithPagination = (state = intialState, action) => {
 
       case HANDLE_PAGINATION_NEXT_BUTTON_CLICK:
            {
-             const { tableContentArray, rowsPerPage, currentPage } = state;
-             const numberOfPages = Math.ceil(tableContentArray.length / rowsPerPage);
+             const { currentPage } = state;
+             const numberOfPages = action.payload;
              const newCurrentPage = (currentPage < numberOfPages)? currentPage + 1 :currentPage;
              return Object.assign({}, state, {currentPage: newCurrentPage});
            }
