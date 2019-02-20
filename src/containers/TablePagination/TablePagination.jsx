@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
+import ErrorMsg from "../../components/ErrorMsg/ErrorMsg";
+import Spinner from "../../components/Spinner/Spinner";
 import Table from "../../components/Table/Table";
 import PaginationScroller from "../../components/PaginationScroller/PaginationScroller";
 
-import {getCampaignData,
+import {get_campaign_data,
        handle_pagination_page_button_click,
        handle_pagination_prev_button_click,
        handle_pagination_next_button_click} from "../../actions/actions";
@@ -22,7 +23,7 @@ class TablePagination extends Component{
 
     componentDidMount(){
       
-      this.props.getCampaignData();
+      this.props.get_campaign_data();
 
     }
    
@@ -49,8 +50,10 @@ class TablePagination extends Component{
 
     render(){
         
-        const { tableContentArray, currentPage, rowsPerPage, tableName, isLoaded } = this.props.tableAndPaginationData;
-        console.log(tableContentArray);
+        const { tableContentArray, currentPage, rowsPerPage, tableName,isLoaded } = this.props.tableAndPaginationData;
+        const { errorsCampaign } = this.props.errors;
+        const { campaignFetched } = this.props.isFetched;
+
         const tableColumnLabels = [
             "Campaign Id",
             "Advertisor Id",
@@ -82,7 +85,7 @@ class TablePagination extends Component{
 
         return(
            <React.Fragment>
-                 {isLoaded ? (
+                 {isLoaded && campaignFetched && !errorsCampaign.errors ? (
                    <section className = "table-pagination">
                     <Table 
                     tableName = {tableName}
@@ -99,20 +102,33 @@ class TablePagination extends Component{
                      handleNextButton = {this.handlePaginationNextButtonClick}
                      />
                    </section> 
-                  ) : (
-                     <div>Loading...</div>
-                 )}  
+                  ):!campaignFetched && errorsCampaign.errors ?(
+                    <section className = "table-pagination">
+                       <div className="spinner__wrapper--table">
+                           <Spinner />
+                       </div>
+                    </section> 
+                  ):(
+                    <section className = "table-pagination">
+                      <div className="spinner__wrapper--table">
+                          <ErrorMsg msg={errorsCampaign.response} />
+                      </div>
+                    </section> 
+                  )
+                 }  
            </React.Fragment>
         ); 
     }
 }
 
 const mapStateToProps = state => ({
-  tableAndPaginationData: state.tableDisplayWithPagination
+  tableAndPaginationData: state.tableDisplayWithPagination,
+  errors:state.errors,
+  isFetched:state.isFetched
 });
 
 export default connect(mapStateToProps,{
-  getCampaignData,
+  get_campaign_data,
   handle_pagination_page_button_click,
   handle_pagination_prev_button_click,
   handle_pagination_next_button_click
