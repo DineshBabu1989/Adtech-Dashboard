@@ -22,12 +22,10 @@ class Dashboard extends Component{
                  <nav className = {`dashboard__sidebar--mobile-${this.props.showSideBar}`}>
                     <SideBar/>
                  </nav>
-
                </div>
             </React.Fragment>
         )
     }
-
 }
 
 const mapStateToProps = state => ({

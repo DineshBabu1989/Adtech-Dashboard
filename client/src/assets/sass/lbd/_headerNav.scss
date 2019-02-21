@@ -7,7 +7,6 @@
     align-items: center;
     justify-content: space-between;
     border-bottom:1px solid $medium-gray;
-    //box-shadow: $dropdown-shadow;
     background: $white-color;
 
     &__item{
@@ -115,6 +114,7 @@
 @media (max-width: 780px){
     .header{
         justify-content: space-between;
+        position: fixed;
     }
 
     .search{

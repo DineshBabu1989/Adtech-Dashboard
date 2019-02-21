@@ -5,10 +5,10 @@ import Spinner from "../../components/Spinner/Spinner";
 import Table from "../../components/Table/Table";
 import PaginationScroller from "../../components/PaginationScroller/PaginationScroller";
 
-import {get_campaign_data,
+import { get_campaign_data,
        handle_pagination_page_button_click,
        handle_pagination_prev_button_click,
-       handle_pagination_next_button_click} from "../../actions/actions";
+       handle_pagination_next_button_click } from "../../actions/actions";
 
 class TablePagination extends Component{
 
@@ -82,19 +82,19 @@ class TablePagination extends Component{
            <React.Fragment>
                  {isLoaded && campaignFetched && !errorsCampaign.errors ? (
                    <section className = "table-pagination">
-                    <Table 
-                    tableName = {tableName}
-                    tableContentArray = {createCurrentTableData()}
-                    tableRowElementProperties =  {tableRowElementProperties}
-                    tableColumnLabels = {tableColumnLabels}
-                    />
-                    <PaginationScroller 
-                     currentPage ={currentPage}
-                     tableContentArray = {tableContentArray} 
-                     rowsPerPage = {rowsPerPage} 
-                     handlePageButton = {this.handlePaginationPageButtonClick} 
-                     handlePrevButton = {this.handlePaginationPrevButtonClick}
-                     handleNextButton = {this.handlePaginationNextButtonClick}
+                     <Table 
+                      tableName = {tableName}
+                      tableContentArray = {createCurrentTableData()}
+                      tableRowElementProperties =  {tableRowElementProperties}
+                      tableColumnLabels = {tableColumnLabels}
+                     />
+                     <PaginationScroller 
+                      currentPage ={currentPage}
+                      tableContentArray = {tableContentArray} 
+                      rowsPerPage = {rowsPerPage} 
+                      handlePageButton = {this.handlePaginationPageButtonClick} 
+                      handlePrevButton = {this.handlePaginationPrevButtonClick}
+                      handleNextButton = {this.handlePaginationNextButtonClick}
                      />
                    </section> 
                   ):!campaignFetched && errorsCampaign.errors ?(

@@ -1,6 +1,4 @@
-// Variables for style management
-
-//dashboard header
+/* Color Variables */
 
 $none:                       0   !default;
 $border-thin:                1px !default;
@@ -12,7 +10,7 @@ $white-bg:                   #FFFFFF !default;
 $smoke-bg:                   #F5F5F5 !default;
 
 $black-bg:                   rgba(30,30,30,.97) !default;
-
+$medium-black:               #484848;
 $black-color:                #333333 !default;
 $black-hr:                   #444444 !default;
 
@@ -238,6 +236,7 @@ $social-tumblr: 			#35465c;
 $social-behance: 			#1769ff;
 
 
+$filter-black:         darken($medium-black,4%);
 $filter-blue:         darken($primary-color, 10%);
 $filter-azure:        darken($info-color, 10%);
 $filter-green:        darken($success-color, 10%);

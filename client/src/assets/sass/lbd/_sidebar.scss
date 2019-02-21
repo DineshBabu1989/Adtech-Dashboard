@@ -2,11 +2,12 @@
 .sidebar{
     width:100%;
     height: 100%;
-    background: $default-bg;
+    background-color: $medium-black;
+    box-shadow: $dropdown-shadow;
 
     &__heading{
         height:70px;
-        border-bottom: 1px solid $medium-gray;
+        border-bottom: 1px solid $smoke-bg;
         display: flex;
         justify-content: center;
 
@@ -51,10 +52,11 @@
             border-radius: 5px;
             padding: 20px;
             margin:5px;
-            background: $dark-gray;
+            background-color: $filter-black;
+            border: 1px solid $dark-gray;
         }
         &--item:hover{
-            background:$default-states-color;
+            background-color:$black-color;
         }
         &--icon{
             color:$white-color;

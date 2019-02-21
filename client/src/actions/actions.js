@@ -101,7 +101,7 @@ export const load_table_pagination_bar = (data) => {
     payload: {
      tableContentArray : data,
      currentPage: 1,
-     rowsPerPage: 10,
+     rowsPerPage: 8,
      tableName:"Campaigns Breakdown",
      isLoaded:true
    }

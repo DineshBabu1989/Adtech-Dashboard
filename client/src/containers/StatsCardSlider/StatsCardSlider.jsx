@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import ErrorMsg from "../../components/ErrorMsg/ErrorMsg";
 import Spinner from "../../components/Spinner/Spinner";
 import StatsCard from "../../components/StatsCard/StatsCard";
-import {get_stats_cards_data} from "../../actions/actions";
+import { get_stats_cards_data } from "../../actions/actions";
 
 
 
@@ -122,6 +122,7 @@ class StatsCardSlidder extends Component{
     }
 
 }
+
 const mapStateToProps = state => ({
     statsData: state.statsCardSlider,
     errors:state.errors,

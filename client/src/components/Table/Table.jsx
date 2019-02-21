@@ -6,23 +6,20 @@
  * @tableContentArray - Array that holds the data as objects
  */
 
-
 import React, { Component } from "react";
 
 class Table extends Component{
 
     tableContent = (tableContentArray) => {
 
-       if(tableContentArray.length === 0)
-       {
+       if(tableContentArray.length === 0){
            return "loading..."
        }
        
        return tableContentArray.map((ele,unique_id) => {
-
             const tableRowData = this.props.tableRowElementProperties.map((property,i) => 
             <td key={i}>{ele[property]}</td>);
-
+            
             return <tr key={unique_id}>{tableRowData}</tr>
        });
     }
