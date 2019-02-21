@@ -22,27 +22,22 @@ class TablePagination extends Component{
    }
 
     componentDidMount(){
-      
       this.props.get_campaign_data();
-
     }
    
     handlePaginationPageButtonClick(event) {
-
       const pageNumber = Number(event.target.id);
       this.props.handle_pagination_page_button_click(pageNumber);
-     
     }   
     
     handlePaginationPrevButtonClick(){
-
        this.props.handle_pagination_prev_button_click();
     }
 
     handlePaginationNextButtonClick(){
         const tableLength = this.props.tableAndPaginationData.tableContentArray.length;
         const tableRows = this.props.tableAndPaginationData.rowsPerPage;
-
+        
         const numberOfPages = Math.ceil(tableLength/tableRows);
 
         this.props.handle_pagination_next_button_click(numberOfPages);
@@ -104,13 +99,13 @@ class TablePagination extends Component{
                    </section> 
                   ):!campaignFetched && errorsCampaign.errors ?(
                     <section className = "table-pagination">
-                       <div className="spinner__wrapper--table">
+                       <div className="spinner__wrapper">
                            <Spinner />
                        </div>
                     </section> 
                   ):(
                     <section className = "table-pagination">
-                      <div className="spinner__wrapper--table">
+                      <div className="error-msg__wrapper">
                           <ErrorMsg msg={errorsCampaign.response} />
                       </div>
                     </section> 

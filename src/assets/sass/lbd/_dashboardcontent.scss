@@ -7,6 +7,7 @@
 
   &__statscards{
     display: flex;
+    overflow-x: auto;
     flex:1;
     background-color: inherit;
     justify-content: space-between;
@@ -27,7 +28,7 @@
   .dashboardcontent__statscards{
 
       flex-wrap: wrap;      
-
+    
       &--item{
         flex: 1 1 40%;
       }

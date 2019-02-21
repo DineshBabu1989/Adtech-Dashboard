@@ -48,6 +48,16 @@
   padding: 10px;
   border: 1px solid #9A9A9A; }
 
+.error-msg__wrapper {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  border: 1px solid #DDDDDD; }
+
 .statscard {
   width: 100%;
   background-color: #FFFFFF;
@@ -510,6 +520,7 @@ h1 .subtitle {
   padding: 10px; }
   .dashboardcontent__statscards {
     display: flex;
+    overflow-x: auto;
     flex: 1;
     background-color: inherit;
     justify-content: space-between; }
