@@ -87,13 +87,12 @@ npm run dev
 
 ## Screen shots 
 
-Large devices
+
 ![screenshot 2019-02-21 at 18 34 11](https://user-images.githubusercontent.com/35486337/53189597-3185c780-3608-11e9-8035-97600de67a01.png)
 
-Medium devices
 ![screenshot 2019-02-21 at 18 34 51](https://user-images.githubusercontent.com/35486337/53189670-5712d100-3608-11e9-8206-ff621e2c7663.png)
 
-Smaller devices
+
 ![screenshot 2019-02-21 at 18 35 29](https://user-images.githubusercontent.com/35486337/53189718-6eea5500-3608-11e9-9eff-7ba93ac498c0.png)
 
 
