@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "client-install": "npm install --prefix client",
-    "start": "node server.js",
-    "server": "nodemon server.js",
     "client": "npm start --prefix client",
+    "seedDb": "node loadCSV",
+    "server": "nodemon server",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [
