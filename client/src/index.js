@@ -6,7 +6,7 @@ import thunk from "redux-thunk";
 import { createStore, applyMiddleware } from "redux";
 import reducer from './reducers';
 import Dashboard from "../src/views/Dashboard/Dashboard";
-import "./assets/sass/main.css";
+import "./resources/sass/main.css";
 
 const store = createStore(reducer,applyMiddleware(thunk));
 

@@ -1,7 +1,7 @@
 const Pool = require('pg').Pool;
-const Config = require('./config/keys');
+const config = require('./config/keys');
 
-const pool = new Pool(Config);
+const pool = new Pool(config);
 
 pool.connect(function(err, client, done) {
     console.log('connected to db');
