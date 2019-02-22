@@ -50,9 +50,11 @@ npm install
 
 ```
 
-step:6 run the project locally
+step:6 seed the database and run the project locally
 
 ```
+npm run seedDb 
+
 npm run dev
 
 ```
@@ -83,6 +85,18 @@ npm run dev
 - React, Redux, SASS, FLEX-BOX
 - Node.js, postgres SQL
 
+## Screen shots 
+
+
+![screenshot 2019-02-21 at 18 34 11](https://user-images.githubusercontent.com/35486337/53189597-3185c780-3608-11e9-8035-97600de67a01.png)
+
+![screenshot 2019-02-21 at 18 34 51](https://user-images.githubusercontent.com/35486337/53189670-5712d100-3608-11e9-8206-ff621e2c7663.png)
+
+
+![screenshot 2019-02-21 at 18 35 29](https://user-images.githubusercontent.com/35486337/53189718-6eea5500-3608-11e9-9eff-7ba93ac498c0.png)
+
+
+![screenshot 2019-02-21 at 18 38 12](https://user-images.githubusercontent.com/35486337/53189749-81648e80-3608-11e9-9530-ce366b6220b7.png)
 
 ## Authors
 
