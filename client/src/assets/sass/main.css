@@ -414,10 +414,7 @@ h1 .subtitle {
 
 @media (max-width: 980px) {
   .header {
-<<<<<<< HEAD
     width: 100vw;
-=======
->>>>>>> f871454f95bc45082e58ba946436c35b5abeb8f2
     justify-content: space-between;
     position: fixed; }
   .search {
@@ -432,19 +429,11 @@ h1 .subtitle {
 .sidebar {
   width: 100%;
   height: 100%;
-<<<<<<< HEAD
   background-color: #3A4558;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.125); }
   .sidebar__heading {
     height: 70px;
     border-bottom: 1px solid #2B3544;
-=======
-  background-color: #484848;
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.125); }
-  .sidebar__heading {
-    height: 70px;
-    border-bottom: 1px solid #F5F5F5;
->>>>>>> f871454f95bc45082e58ba946436c35b5abeb8f2
     display: flex;
     justify-content: center; }
     .sidebar__heading--wrapper {
@@ -476,17 +465,10 @@ h1 .subtitle {
     border-radius: 5px;
     padding: 20px;
     margin: 5px;
-<<<<<<< HEAD
     background-color: inherit;
     color: #A0ABBF; }
   .sidebar__navlinks--item:hover {
-    color: #fff; }
-=======
-    background-color: #3e3e3e;
-    border: 1px solid #9A9A9A; }
-  .sidebar__navlinks--item:hover {
-    background-color: #333333; }
->>>>>>> f871454f95bc45082e58ba946436c35b5abeb8f2
+    color: #FFFFFF; }
   .sidebar__navlinks--icon {
     font-size: 20px; }
   .sidebar__navlinks li:nth-child(2) > p {

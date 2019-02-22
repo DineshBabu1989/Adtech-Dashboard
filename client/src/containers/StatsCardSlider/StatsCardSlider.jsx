@@ -3,11 +3,7 @@ import { connect } from "react-redux";
 import ErrorMsg from "../../components/ErrorMsg/ErrorMsg";
 import Spinner from "../../components/Spinner/Spinner";
 import StatsCard from "../../components/StatsCard/StatsCard";
-<<<<<<< HEAD
 import { getStatsCardsData } from "../../actions/actions";
-=======
-import { get_stats_cards_data } from "../../actions/actions";
->>>>>>> f871454f95bc45082e58ba946436c35b5abeb8f2
 
 
 

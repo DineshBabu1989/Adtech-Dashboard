@@ -5,17 +5,10 @@ import Spinner from "../../components/Spinner/Spinner";
 import Table from "../../components/Table/Table";
 import PaginationScroller from "../../components/PaginationScroller/PaginationScroller";
 
-<<<<<<< HEAD
 import { getCampaignData,
        handlePaginationPageButtonClick,
        handlePaginationPrevButtonClick,
        handlePaginationNextButtonClick } from "../../actions/actions";
-=======
-import { get_campaign_data,
-       handle_pagination_page_button_click,
-       handle_pagination_prev_button_click,
-       handle_pagination_next_button_click } from "../../actions/actions";
->>>>>>> f871454f95bc45082e58ba946436c35b5abeb8f2
 
 class TablePagination extends Component{
 
@@ -99,15 +92,9 @@ class TablePagination extends Component{
                       currentPage ={currentPage}
                       tableContentArray = {tableContentArray} 
                       rowsPerPage = {rowsPerPage} 
-<<<<<<< HEAD
                       handlePageButton = {this.handlePageButtonClick} 
                       handlePrevButton = {this.handlePrevButtonClick}
                       handleNextButton = {this.handleNextButtonClick}
-=======
-                      handlePageButton = {this.handlePaginationPageButtonClick} 
-                      handlePrevButton = {this.handlePaginationPrevButtonClick}
-                      handleNextButton = {this.handlePaginationNextButtonClick}
->>>>>>> f871454f95bc45082e58ba946436c35b5abeb8f2
                      />
                    </section> 
                   ):!campaignFetched && errorsCampaign.errors ?(
