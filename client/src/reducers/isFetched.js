@@ -14,5 +14,6 @@ const  isFetched = (state = intialState, action) => {
         return state
     }
 }
+
 export default isFetched;
 

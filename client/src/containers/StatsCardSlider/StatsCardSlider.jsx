@@ -3,14 +3,14 @@ import { connect } from "react-redux";
 import ErrorMsg from "../../components/ErrorMsg/ErrorMsg";
 import Spinner from "../../components/Spinner/Spinner";
 import StatsCard from "../../components/StatsCard/StatsCard";
-import {get_stats_cards_data} from "../../actions/actions";
+import { getStatsCardsData } from "../../actions/actions";
 
 
 
 class StatsCardSlidder extends Component{
 
     componentDidMount(){
-        this.props.get_stats_cards_data();
+        this.props.getStatsCardsData();
       }
 
     generateStatsProps= (statsInfo,isUpdated)=>{
@@ -122,10 +122,11 @@ class StatsCardSlidder extends Component{
     }
 
 }
+
 const mapStateToProps = state => ({
     statsData: state.statsCardSlider,
     errors:state.errors,
     isFetched:state.isFetched
 });
   
-export default connect(mapStateToProps,{ get_stats_cards_data })(StatsCardSlidder);
+export default connect(mapStateToProps,{ getStatsCardsData })(StatsCardSlidder);

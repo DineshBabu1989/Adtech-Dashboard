@@ -8,13 +8,10 @@
 }
 
 html {
-  // This defines what 1rem is
   font-size: 62.5%;
-  height:100%;
 }
 
 body {
   box-sizing: border-box;
-  //min-height: 100%;
   background-color: $smoke-bg;
 }

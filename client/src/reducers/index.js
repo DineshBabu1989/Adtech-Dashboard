@@ -10,8 +10,7 @@ const rootReducer = combineReducers({
   statsCardSlider:statsCardSlider,
   tableDisplayWithPagination: tableDisplayWithPagination,
   errors:errors,
-  isFetched:isFetched,
-
-
+  isFetched:isFetched
 });
+
 export default rootReducer;

@@ -8,6 +8,6 @@ const  toggleSideBar = (state = false, action) => {
       default:
         return state
     }
-  }
+}
   
-  export default toggleSideBar;
+export default toggleSideBar;

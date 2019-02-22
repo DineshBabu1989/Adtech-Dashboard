@@ -5,42 +5,42 @@ import Spinner from "../../components/Spinner/Spinner";
 import Table from "../../components/Table/Table";
 import PaginationScroller from "../../components/PaginationScroller/PaginationScroller";
 
-import {get_campaign_data,
-       handle_pagination_page_button_click,
-       handle_pagination_prev_button_click,
-       handle_pagination_next_button_click} from "../../actions/actions";
+import { getCampaignData,
+       handlePaginationPageButtonClick,
+       handlePaginationPrevButtonClick,
+       handlePaginationNextButtonClick } from "../../actions/actions";
 
 class TablePagination extends Component{
 
    constructor(props){
        super(props);
 
-       this.handlePaginationPageButtonClick = this.handlePaginationPageButtonClick.bind(this);
-       this.handlePaginationPrevButtonClick = this.handlePaginationPrevButtonClick.bind(this);
-       this.handlePaginationNextButtonClick = this.handlePaginationNextButtonClick.bind(this);
+       this.handlePageButtonClick = this.handlePageButtonClick.bind(this);
+       this.handlePrevButtonClick = this.handlePrevButtonClick.bind(this);
+       this.handleNextButtonClick = this.handleNextButtonClick.bind(this);
 
    }
 
     componentDidMount(){
-      this.props.get_campaign_data();
+      this.props.getCampaignData();
     }
    
-    handlePaginationPageButtonClick(event) {
+    handlePageButtonClick(event) {
       const pageNumber = Number(event.target.id);
-      this.props.handle_pagination_page_button_click(pageNumber);
+      this.props.handlePaginationPageButtonClick(pageNumber);
     }   
     
-    handlePaginationPrevButtonClick(){
-       this.props.handle_pagination_prev_button_click();
+    handlePrevButtonClick(){
+      this.props.handlePaginationPrevButtonClick();
     }
 
-    handlePaginationNextButtonClick(){
+    handleNextButtonClick(){
         const tableLength = this.props.tableAndPaginationData.tableContentArray.length;
         const tableRows = this.props.tableAndPaginationData.rowsPerPage;
         
         const numberOfPages = Math.ceil(tableLength/tableRows);
 
-        this.props.handle_pagination_next_button_click(numberOfPages);
+        this.props.handlePaginationNextButtonClick(numberOfPages);
     }
 
     render(){
@@ -82,19 +82,19 @@ class TablePagination extends Component{
            <React.Fragment>
                  {isLoaded && campaignFetched && !errorsCampaign.errors ? (
                    <section className = "table-pagination">
-                    <Table 
-                    tableName = {tableName}
-                    tableContentArray = {createCurrentTableData()}
-                    tableRowElementProperties =  {tableRowElementProperties}
-                    tableColumnLabels = {tableColumnLabels}
-                    />
-                    <PaginationScroller 
-                     currentPage ={currentPage}
-                     tableContentArray = {tableContentArray} 
-                     rowsPerPage = {rowsPerPage} 
-                     handlePageButton = {this.handlePaginationPageButtonClick} 
-                     handlePrevButton = {this.handlePaginationPrevButtonClick}
-                     handleNextButton = {this.handlePaginationNextButtonClick}
+                     <Table 
+                      tableName = {tableName}
+                      tableContentArray = {createCurrentTableData()}
+                      tableRowElementProperties =  {tableRowElementProperties}
+                      tableColumnLabels = {tableColumnLabels}
+                     />
+                     <PaginationScroller 
+                      currentPage ={currentPage}
+                      tableContentArray = {tableContentArray} 
+                      rowsPerPage = {rowsPerPage} 
+                      handlePageButton = {this.handlePageButtonClick} 
+                      handlePrevButton = {this.handlePrevButtonClick}
+                      handleNextButton = {this.handleNextButtonClick}
                      />
                    </section> 
                   ):!campaignFetched && errorsCampaign.errors ?(
@@ -123,9 +123,9 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps,{
-  get_campaign_data,
-  handle_pagination_page_button_click,
-  handle_pagination_prev_button_click,
-  handle_pagination_next_button_click
+  getCampaignData,
+  handlePaginationPageButtonClick,
+  handlePaginationPrevButtonClick,
+  handlePaginationNextButtonClick
 })(TablePagination);
 

@@ -10,7 +10,7 @@ class DashboardContent extends Component{
         return(
              <React.Fragment>
                <section className = "dashboardcontent">
-                     <StatsCardSlider/>
+                  <StatsCardSlider/>
                   <section className="dashboardcontent__table">
                      <TablePagination/>
                   </section>
@@ -18,7 +18,6 @@ class DashboardContent extends Component{
             </React.Fragment>
         )
     }
-
 }
   
 export default DashboardContent;
