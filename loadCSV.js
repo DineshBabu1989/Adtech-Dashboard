@@ -17,7 +17,7 @@ const createTablesAndLoadDataFromCSV = async() => {
 
   const localPath = path.resolve(__dirname);
 
-  const dropTables             =  `DROP TABLE advertisers,campaigns,reports`;
+  //const dropTables             =  `DROP TABLE advertisers,campaigns,reports`;
 
   const createTableAdvertisers = `CREATE TABLE advertisers(
                                         id INT,
@@ -69,7 +69,7 @@ const createTablesAndLoadDataFromCSV = async() => {
                                         cost_micros) FROM '${localPath}/seeds/reports.csv' DELIMITER ',' CSV HEADER`;    
                                         
   try{
-   await pool.query(dropTables);
+   //await pool.query(dropTables);
    await pool.query(createTableAdvertisers);
    await pool.query(createTableCampaigns);
    await pool.query(createTableReports);
