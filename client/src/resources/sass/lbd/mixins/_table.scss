@@ -11,13 +11,24 @@
         overflow-x: auto;
     }
 
-    &__heading{
+    &__head{
+       background-color: inherit;
+       border-bottom:1px solid $medium-gray;
+       display: flex;
+       justify-content: space-between;
+       align-items: baseline;
+    }
+
+    &__heading--text{
         background-color:inherit;
-        border-bottom:1px solid $medium-gray;
         margin: 0px;
         padding-bottom: 10px;
         color:$default-states-color;
         font-weight: 400;
+    }
+
+    &__rows--slider{
+        background-color: inherit;
     }
 
     table{

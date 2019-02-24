@@ -1,7 +1,8 @@
 import { LOAD_TABLE_PAGINATION_BAR, 
         HANDLE_PAGINATION_PAGE_BUTTON_CLICK, 
         HANDLE_PAGINATION_PREV_BUTTON_CLICK,
-        HANDLE_PAGINATION_NEXT_BUTTON_CLICK } from '../actions/actions'; 
+        HANDLE_PAGINATION_NEXT_BUTTON_CLICK,
+        HANDLE_TABLE_NUMBER_OF_ROWS_SELECT } from '../actions/actions'; 
 
 const intialState = {
   isLoaded:false
@@ -25,6 +26,11 @@ const  tableDisplayWithPagination = (state = intialState, action) => {
              const numberOfPages = action.payload;
              const newCurrentPage = (currentPage < numberOfPages)? currentPage + 1 :currentPage;
              return Object.assign({}, state, { currentPage: newCurrentPage });
+           }
+      case HANDLE_TABLE_NUMBER_OF_ROWS_SELECT:
+           {
+            const numberOfTableRows = action.payload;
+            return Object.assign({}, state, { rowsPerPage: numberOfTableRows });
            }
       default:
         return state

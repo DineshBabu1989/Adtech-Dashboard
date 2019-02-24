@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class PaginationScroller extends Component {
+
   pageNumbersInScroller() {
     const { currentPage,tableContentArray,rowsPerPage } = this.props;
     const pageNumbers = [];

@@ -7,6 +7,7 @@ import Table from '../../components/Table/Table';
 import PaginationScroller from '../../components/PaginationScroller/PaginationScroller';
 
 import { getCampaignData,
+       updateTableRowsValue,
        handlePaginationPageButtonClick,
        handlePaginationPrevButtonClick,
        handlePaginationNextButtonClick } from '../../actions/actions';
@@ -19,6 +20,7 @@ class TablePagination extends Component{
        this.handlePageButtonClick = this.handlePageButtonClick.bind(this);
        this.handlePrevButtonClick = this.handlePrevButtonClick.bind(this);
        this.handleNextButtonClick = this.handleNextButtonClick.bind(this);
+       this.handleNumberOfTableRowsRangeSelect = this.handleNumberOfTableRowsRangeSelect.bind(this);
 
    }
 
@@ -44,6 +46,10 @@ class TablePagination extends Component{
         this.props.handlePaginationNextButtonClick(numberOfPages);
     }
 
+    handleNumberOfTableRowsRangeSelect(value){
+        this.props.updateTableRowsValue(value);
+    }
+
     render(){
         
         const { tableContentArray, currentPage, rowsPerPage, tableName,isLoaded } = this.props.tableAndPaginationData;
@@ -58,7 +64,7 @@ class TablePagination extends Component{
             { id:5, labelName:'Ending Date' },
             { id:6, labelName:'Cost Model' },
             { id:7, labelName:'Cost' }
-        ]
+        ];
         const tableRowElementProperties = [
            { id:1, propertyName:'id' },
            { id:2, propertyName:'advertiser_id' },
@@ -86,6 +92,7 @@ class TablePagination extends Component{
                          tableContentArray = { createCurrentTableData() }
                          tableRowElementProperties =  { tableRowElementProperties }
                          tableColumnLabels = { tableColumnLabels }
+                         handleRowsRangeSelect = { this.handleNumberOfTableRowsRangeSelect }
                          />
                         <PaginationScroller 
                          currentPage = { currentPage }
@@ -94,7 +101,7 @@ class TablePagination extends Component{
                          handlePageButton = { this.handlePageButtonClick } 
                          handlePrevButton = { this.handlePrevButtonClick }
                          handleNextButton = { this.handleNextButtonClick }
-                     />
+                         />
                     </section> 
                   ):!campaignFetched && errorsCampaign.errors ?(
                       <section className = 'table-pagination'>
@@ -132,6 +139,7 @@ TablePagination.propTypes = {
   errors: PropTypes.object,
   isFetched: PropTypes.object.isRequired,
   getCampaignData:PropTypes.func,
+  updateTableRowsValue:PropTypes.func, 
   handlePaginationPageButtonClick:PropTypes.func,
   handlePaginationPrevButtonClick:PropTypes.func,
   handlePaginationNextButtonClick:PropTypes.func
@@ -139,6 +147,7 @@ TablePagination.propTypes = {
 
 export default connect(mapStateToProps,{
   getCampaignData,
+  updateTableRowsValue,
   handlePaginationPageButtonClick,
   handlePaginationPrevButtonClick,
   handlePaginationNextButtonClick
