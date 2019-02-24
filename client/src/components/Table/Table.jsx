@@ -6,53 +6,54 @@
  * @tableContentArray - Array that holds the data as objects
  */
 
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Table extends Component{
 
     tableContent = (tableContentArray) => {
-
-       if(tableContentArray.length === 0){
-           return "loading..."
-       }
-       
-       return tableContentArray.map((ele,unique_id) => {
-            const tableRowData = this.props.tableRowElementProperties.map((property,i) => 
-            <td key={i}>{ele[property]}</td>);
-            
-            return <tr key={unique_id}>{tableRowData}</tr>
+       return tableContentArray.map((ele) => {
+            const tableRowData = this.props.tableRowElementProperties.map((property) => 
+                <td key={ property.id }>{ ele[ property.propertyName ] }</td>);
+            return <tr key={ ele.id }>{tableRowData}</tr>
        });
     }
 
     renderTableHeaders = () =>{
-        
-        return this.props.tableColumnLabels.map((headerTag,index) => 
-        <th key = {index}>{headerTag}</th>
+        return this.props.tableColumnLabels.map((headerTag) => 
+            <th key = { headerTag.id }>{headerTag.labelName}</th>
         );
     }
 
     render(){
 
         return(
-           <React.Fragment>
-              <section className = "table">
-                  <h4 className = "table__heading">{this.props.tableName}</h4>
-                   <div className= "table__wrapper">
-                    <table>
-                      <thead>
-                        <tr>
-                          {this.renderTableHeaders()}
-                        </tr> 
-                      </thead>  
-                     <tbody>
-                          {this.tableContent(this.props.tableContentArray)}
-                     </tbody>
-                   </table>
-                  </div>
-              </section>
-           </React.Fragment>
+            <React.Fragment>
+                <section className = "table">
+                    <h4 className = "table__heading">{this.props.tableName}</h4>
+                    <div className= "table__wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    { this.renderTableHeaders() }
+                                </tr> 
+                            </thead>  
+                            <tbody>
+                                { this.tableContent(this.props.tableContentArray) }
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </React.Fragment>
         ); 
     }
+}
+
+Table.propTypes = {
+  tableName: PropTypes.string,
+  tableContentArray: PropTypes.array.isRequired,
+  tableRowElementProperties: PropTypes.array,
+  tableColumnLabels: PropTypes.array
 }
 
 export default Table;

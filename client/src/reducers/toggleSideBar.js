@@ -1,4 +1,4 @@
-import { TOGGLE_SIDE_BAR } from "../actions/actions";
+import { TOGGLE_SIDE_BAR } from '../actions/actions';
 
 const  toggleSideBar = (state = false, action) => {
 

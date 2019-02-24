@@ -1,8 +1,8 @@
 {
   "files.autoSave": "onFocusChange",
-  "editor.formatOnSave": true,
-  "editor.formatOnType": true,
-  "eslint.autoFixOnSave": true,
+  "editor.formatOnSave": false,
+  "editor.formatOnType": false,
+  "eslint.autoFixOnSave": false,
   "eslint.enable": true,
-  "prettier.singleQuote": true
+  "prettier.singleQuote": false
 }

@@ -1,14 +1,15 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import ErrorMsg from "../../components/ErrorMsg/ErrorMsg";
-import Spinner from "../../components/Spinner/Spinner";
-import Table from "../../components/Table/Table";
-import PaginationScroller from "../../components/PaginationScroller/PaginationScroller";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import ErrorMsg from '../../components/ErrorMsg/ErrorMsg';
+import Spinner from '../../components/Spinner/Spinner';
+import Table from '../../components/Table/Table';
+import PaginationScroller from '../../components/PaginationScroller/PaginationScroller';
 
 import { getCampaignData,
        handlePaginationPageButtonClick,
        handlePaginationPrevButtonClick,
-       handlePaginationNextButtonClick } from "../../actions/actions";
+       handlePaginationNextButtonClick } from '../../actions/actions';
 
 class TablePagination extends Component{
 
@@ -48,27 +49,26 @@ class TablePagination extends Component{
         const { tableContentArray, currentPage, rowsPerPage, tableName,isLoaded } = this.props.tableAndPaginationData;
         const { errorsCampaign } = this.props.errors;
         const { campaignFetched } = this.props.isFetched;
-
+        //static data
         const tableColumnLabels = [
-            "Campaign Id",
-            "Advertisor Id",
-            "Name",
-            "Starting Date",
-            "Ending Date",
-            "Cost Model",
-            "Cost"
+            { id:1, labelName:'Campaign Id' },
+            { id:2, labelName:'Advertisor Id' },
+            { id:3, labelName:'Name' },
+            { id:4, labelName:'Starting Date' },
+            { id:5, labelName:'Ending Date' },
+            { id:6, labelName:'Cost Model' },
+            { id:7, labelName:'Cost' }
         ]
         const tableRowElementProperties = [
-            "id", 
-            "advertiser_id",
-            "name",
-            "start_date",
-            "end_date",
-            "cost_model",
-            "cost"
+           { id:1, propertyName:'id' },
+           { id:2, propertyName:'advertiser_id' },
+           { id:3, propertyName:'name' },
+           { id:4, propertyName:'start_date' },
+           { id:5, propertyName:'end_date' },
+           { id:6, propertyName:'cost_model' },
+           { id:7, propertyName:'cost' }
        ];
 
-    
         const createCurrentTableData = () =>{
             // Logic for displaying current table content
             const indexOfLastItem = currentPage * rowsPerPage;
@@ -77,41 +77,40 @@ class TablePagination extends Component{
             return currentTableItems
         }
        
-
         return(
-           <React.Fragment>
-                 {isLoaded && campaignFetched && !errorsCampaign.errors ? (
-                   <section className = "table-pagination">
-                     <Table 
-                      tableName = {tableName}
-                      tableContentArray = {createCurrentTableData()}
-                      tableRowElementProperties =  {tableRowElementProperties}
-                      tableColumnLabels = {tableColumnLabels}
+            <React.Fragment>
+                {isLoaded && campaignFetched && !errorsCampaign.errors ? (
+                    <section className = 'table-pagination'>
+                        <Table 
+                         tableName = { tableName }
+                         tableContentArray = { createCurrentTableData() }
+                         tableRowElementProperties =  { tableRowElementProperties }
+                         tableColumnLabels = { tableColumnLabels }
+                         />
+                        <PaginationScroller 
+                         currentPage = { currentPage }
+                         tableContentArray = { tableContentArray } 
+                         rowsPerPage = { rowsPerPage } 
+                         handlePageButton = { this.handlePageButtonClick } 
+                         handlePrevButton = { this.handlePrevButtonClick }
+                         handleNextButton = { this.handleNextButtonClick }
                      />
-                     <PaginationScroller 
-                      currentPage ={currentPage}
-                      tableContentArray = {tableContentArray} 
-                      rowsPerPage = {rowsPerPage} 
-                      handlePageButton = {this.handlePageButtonClick} 
-                      handlePrevButton = {this.handlePrevButtonClick}
-                      handleNextButton = {this.handleNextButtonClick}
-                     />
-                   </section> 
+                    </section> 
                   ):!campaignFetched && errorsCampaign.errors ?(
-                    <section className = "table-pagination">
-                       <div className="spinner__wrapper">
-                           <Spinner />
-                       </div>
-                    </section> 
+                      <section className = 'table-pagination'>
+                          <div className='spinner__wrapper'>
+                              <Spinner />
+                          </div>
+                      </section> 
                   ):(
-                    <section className = "table-pagination">
-                      <div className="error-msg__wrapper">
-                          <ErrorMsg msg={errorsCampaign.response} />
-                      </div>
-                    </section> 
+                      <section className = 'table-pagination'>
+                          <div className='error-msg__wrapper'>
+                              <ErrorMsg msg = { errorsCampaign.response } />
+                          </div>
+                      </section> 
                   )
                  }  
-           </React.Fragment>
+            </React.Fragment>
         ); 
     }
 }
@@ -122,10 +121,25 @@ const mapStateToProps = state => ({
   isFetched:state.isFetched
 });
 
+TablePagination.propTypes = {
+  tableAndPaginationData: PropTypes.shape({
+    tableContentArray: PropTypes.array,
+    currentPage: PropTypes.number,
+    rowsPerPage: PropTypes.number,
+    tableName: PropTypes.string,
+    isLoaded: PropTypes.bool
+  }),
+  errors: PropTypes.object,
+  isFetched: PropTypes.object.isRequired,
+  getCampaignData:PropTypes.func,
+  handlePaginationPageButtonClick:PropTypes.func,
+  handlePaginationPrevButtonClick:PropTypes.func,
+  handlePaginationNextButtonClick:PropTypes.func
+}
+
 export default connect(mapStateToProps,{
   getCampaignData,
   handlePaginationPageButtonClick,
   handlePaginationPrevButtonClick,
   handlePaginationNextButtonClick
 })(TablePagination);
-

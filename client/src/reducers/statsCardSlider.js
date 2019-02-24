@@ -1,4 +1,4 @@
-import { LOAD_STATS_CARDS } from "../actions/actions";
+import { LOAD_STATS_CARDS } from '../actions/actions';
 
 const intialState = {
     isLoaded:false
