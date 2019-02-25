@@ -24,7 +24,7 @@ Now the user has special permissions as you can see in the screenshot below
 Step:3 Now clone the git repo 
 
 ```
-git clone https://github.com/DineshBabu1989/kayzen-challenge.git
+git clone https://github.com/DineshBabu1989/Adtech-Dashboard.git
 
 ```
 
